@@ -40,8 +40,8 @@ resource "aws_route53_record" "route53_record" {
 # ACM
 resource "aws_acm_certificate" "default" {
   provider                  = "aws.acm"
-  domain_name               = "${var.domain_name}"
-  subject_alternative_names = "${local.aliases}"
+  domain_name               = "${local.aliases[0]}"
+  subject_alternative_names = ["${local.aliases[1]}"]
   validation_method         = "DNS"
 
   lifecycle {
@@ -87,7 +87,6 @@ resource "aws_route53_record" "cert_validation_1" {
 resource "aws_cloudfront_distribution" "default" {
   enabled             = true
   is_ipv6_enabled     = false
-  #default_root_object = "${var.index_document}"
   price_class         = "${var.price_class}"
 
   origin {
