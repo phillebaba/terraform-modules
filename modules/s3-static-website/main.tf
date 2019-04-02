@@ -26,6 +26,7 @@ resource "aws_s3_bucket" "default" {
     }]
     EOF
   }
+  tags = "${var.tags}"
 }
 
 data "aws_iam_policy_document" "s3_public_policy" {

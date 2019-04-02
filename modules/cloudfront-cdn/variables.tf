@@ -1,3 +1,9 @@
+variable "tags" {
+  type        = "map"
+  default     = {}
+  description = "Tags to append to resources"
+}
+
 variable "domain_name" {
   description = "Domain name to link to the CloudFront distribution"
   type = "string"

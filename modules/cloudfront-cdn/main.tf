@@ -47,6 +47,7 @@ resource "aws_acm_certificate" "default" {
   lifecycle {
     create_before_destroy = true
   }
+  tags = "${var.tags}"
 }
 
 resource "aws_acm_certificate_validation" "default" {
@@ -134,4 +135,5 @@ resource "aws_cloudfront_distribution" "default" {
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1"
   }
+  tags = "${var.tags}"
 }

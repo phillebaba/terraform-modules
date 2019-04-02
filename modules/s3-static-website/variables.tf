@@ -1,3 +1,9 @@
+variable "tags" {
+  type        = "map"
+  default     = {}
+  description = "Tags to append to resources"
+}
+
 variable "domain_name" {
   type = "string"
 }
