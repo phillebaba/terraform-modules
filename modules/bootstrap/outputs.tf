@@ -1,5 +1,5 @@
 output "state_bucket_name" {
-  value = "${aws_s3_bucket.state_bucket.name}"
+  value = "${aws_s3_bucket.state_bucket.id}"
 }
 
 output "state_kms_key_id" {
