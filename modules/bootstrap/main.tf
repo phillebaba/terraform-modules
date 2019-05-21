@@ -4,7 +4,7 @@ resource "aws_kms_key" "state_key" {
 }
 
 resource "aws_s3_bucket" "state_bucket" {
-  bucket_prefix = "${var.name}"
+  bucket_prefix = "${var.name}-"
   acl           = "private"
 
   versioning {
